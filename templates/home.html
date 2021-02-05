@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+<!-- Using blocks to show our content in base.html -->
+{% block content %}
+    <!-- Looping over each blog post. Remember that object_list comes from ListView which contains all the objects in our view -->
+    {% for post in object_list %}
+        <div class="post-entry">
+            <h2>
+                <a href="">{{ post.title }}</a>
+            </h2>
+            <p>{{ post.body }}</p>
+        </div>
+    {% endfor %}
+{% endblock content %}
