@@ -1,5 +1,11 @@
+{% load static %}
+{% comment %} Because our other templates inherit from base.html, we only have to add the above code once and all our html files will inherit what is written in it. {% endcomment %}
 <head>
     <title>Django blog</title>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400" rel="styleshee\
+    t">
+    {% comment %} The below code explicitly references our new base.css file {% endcomment %}
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
 </head>
 <body>
     <header>

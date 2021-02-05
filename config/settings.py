@@ -122,5 +122,5 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 # Adding a configuration to look for static folder beyond app/static default like we do with templates. We want it to look into our root folder.
-STATICFILES_DIR = [str(BASE_DIR.joinpath("static"))]
+STATICFILES_DIRS = [str(BASE_DIR.joinpath('static'))]
 
