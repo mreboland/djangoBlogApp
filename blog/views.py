@@ -1,6 +1,8 @@
 # Importing ListView and our db model Post
 from django.views.generic import ListView, DetailView
-from django.views.generic.edit import CreateView, UpdateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.urls import reverse_lazy
+
 from .models import Post
 
 # Subclassing ListView and adding links to our model and template
@@ -31,3 +33,9 @@ class BlogUpdateView(UpdateView):
         "title",
         "body"
     ]
+    
+class BlogDeleteView(DeleteView):
+    model = Post
+    template_name = "post_delete.html"
+    # We use reverse_lazy as opposed to just reverse so that it won't execute the URL redirect until our view has finished deleteing the blog post.
+    success_url = reverse_lazy("home")
