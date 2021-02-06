@@ -1,5 +1,6 @@
 # Importing ListView and our db model Post
 from django.views.generic import ListView, DetailView
+from django.views.generic.edit import CreateView
 from .models import Post
 
 # Subclassing ListView and adding links to our model and template
@@ -11,3 +12,13 @@ class BlogListView(ListView):
 class BlogDetailView(DetailView):
     model = Post
     template_name = "post_detail.html"
+    
+# We specify our db model Post, the name of our template post_new.html. For fields we explicitly set the db fields we want to expose which are title, author, and body.
+class BlogCreateView(CreateView):
+    model = Post
+    template_name = "post_new.html"
+    fields = [
+        "title",
+        "author",
+        "body"
+        ]

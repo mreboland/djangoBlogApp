@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+<!-- Inherit from base template -->
+
+{% block content %}
+    <h1>New post</h1>
+    <!-- Use HTML form tags with the POST method since we're sending data. If receiving, we'd use GET (i.e search box). -->
+    <form action="" method="post">
+        <!-- The below provides protection to our form from cross-site request forgery. This is a must for all django forms. -->
+        {% csrf_token %}
+        <!-- To ouput our form data we use the below which renders it within paragraph, p tags. -->
+        {{ form.as_p }}
+        <!-- We specify an input type of submit and assign it the value "Save" -->
+        <input type="submit" value="Save">
+    </form>
+{% endblock content %}

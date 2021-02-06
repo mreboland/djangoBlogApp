@@ -9,10 +9,15 @@
 </head>
 <body>
     <header>
-        <h1>
-            <!-- Link to homepage -->
-            <a href="{% url 'home' %}">Django blog</a>
-        </h1>
+        <div class="nav-left">
+            <h1>
+                <!-- Link to homepage -->
+                <a href="{% url 'home' %}">Django blog</a>
+            </h1>
+        </div>
+        <div class="nav-right">
+            <a href="{% url 'post_new' %}">+ New Blog Post</a>
+        </div>
     </header>
 
     <!-- Creating a block of content to be filled by other templates -->
