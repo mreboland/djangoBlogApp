@@ -25,7 +25,7 @@ SECRET_KEY = '-a)km611c)h%xhb*(or6(ebam366-myllvk7e2jbwc*4pqp1$g'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [".herokuapp.com", "localhost", "127.0.0.1"]
 
 
 # Application definition
@@ -161,7 +161,8 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # TO SUMMARIZE
 # Static files are quite confusing to newcomers, so as a brief recap here are the steps we’ve
-# executed so far in our Blog site. First, for local development back in Chapter 5, we created top-level static folder and updated STATICFILES_DIRS to point to it. In this chapter, we
+# executed so far in our Blog site. First, for local development back in Chapter 5, we created
+# top-level static folder and updated STATICFILES_DIRS to point to it. In this chapter, we
 # added configurations for STATIC_ROOT and STATICFILES_STORAGE before running collectstatic
 # for the first time, which compiled all our static files across the entire project into a single
 # staticfiles folder. Finally, we installed whitenoise, updated INSTALLED_APPS, MIDDLEWARE, and
