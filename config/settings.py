@@ -127,3 +127,5 @@ STATICFILES_DIRS = [str(BASE_DIR.joinpath('static'))]
 # To redirect users after a successful login
 # The below will redirect the user to our 'home' template.
 LOGIN_REDIRECT_URL = "home"
+# Redirect link for logging out
+LOGOUT_REDIRECT_URL = "home"
