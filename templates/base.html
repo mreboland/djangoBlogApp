@@ -19,6 +19,18 @@
             <a href="{% url 'post_new' %}">+ New Blog Post</a>
         </div>
     </header>
+    {% comment %} Checking if user is authenticated {% endcomment %}
+    {% if user.is_authenticated %}
+        <p class="username">Hi {{ user.username }}!</p>
+        <!-- Adding a logout link -->
+        <p>
+            <a href="{% url 'logout' %}">Log out</a>
+        </p>
+    {% comment %} If they aren't print a unique message saying so {% endcomment %}
+    {% else %}
+        <p>You are not logged in.</p>
+        <a href="{% url 'login' %}">Log In</a>
+    {% endif %}
 
     <!-- Creating a block of content to be filled by other templates -->
     <div>
