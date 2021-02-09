@@ -11,7 +11,8 @@
         <!-- Submit button -->
         <button type="submit">Log In</button>
     </form>
-
+    <p>Not a user yet?</p>
+    <a href="{% url 'signup' %}">Sign Up</a>
     <!-- We need to specify where to redirect the user upon successful login. We do that under LOGIN_REDIRECT_URL in config/settings-->
 
 {% endblock content %}
