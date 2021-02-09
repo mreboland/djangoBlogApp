@@ -20,6 +20,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # Adding out login and out pages at the accounts/ URL
     path("accounts/", include("django.contrib.auth.urls")),
+    # We add the account creation urls under the above because django reads top to bottom. We want the request to accounts/signup url to happen after django first looks in auth (above), and when it cannot find an auth proceed to the accounts app. Aka, check for user, if not create an account.
+    path("accounts/", include("accounts.urls")),
     # Empty string indicates that URL requests should be redirected as is to blog's URLs for further instructions.
     path("", include("blog.urls")),
 ]
