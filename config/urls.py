@@ -18,6 +18,8 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    # Adding out login and out pages at the accounts/ URL
+    path("accounts/", include("django.contrib.auth.urls")),
     # Empty string indicates that URL requests should be redirected as is to blog's URLs for further instructions.
     path("", include("blog.urls")),
 ]

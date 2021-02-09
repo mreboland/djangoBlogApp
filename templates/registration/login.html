@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% comment %} The LoginView documentation notes, that by default, django will look within a templates directory called registration for a file called login.html for a log in form. {% endcomment %}
+
+{% block content %}
+    <h2>Log In</h2>
+    <form method="post">
+        <!-- We add the below for security to prevent a XSS attack. -->
+        {% csrf_token %}
+        <!-- Forms contents are outputted between paragraph tags thanks to the below code. -->
+        {{ form.as_p }}
+        <!-- Submit button -->
+        <button type="submit">Log In</button>
+    </form>
+
+    <!-- We need to specify where to redirect the user upon successful login. We do that under LOGIN_REDIRECT_URL in config/settings-->
+
+{% endblock content %}

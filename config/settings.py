@@ -124,3 +124,6 @@ STATIC_URL = '/static/'
 # Adding a configuration to look for static folder beyond app/static default like we do with templates. We want it to look into our root folder.
 STATICFILES_DIRS = [str(BASE_DIR.joinpath('static'))]
 
+# To redirect users after a successful login
+# The below will redirect the user to our 'home' template.
+LOGIN_REDIRECT_URL = "home"
